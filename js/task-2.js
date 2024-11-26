@@ -21,69 +21,73 @@
 
 `use strict`; // Код у суворому режимі
 
-function calcAverageCalories(days) {
-  if (days.length === 0) return 0; //* Перевірка на порожній масив, щоб потім не ділити на нуль
-  let total = 0;
-  for (const day of days) {
-    total += day.calories;
-  }
-  return total / days.length; //* ділемо через довжину масива, щоб результат був коректним,
-  //* навипадок якщо передані данні не заповний тиждень
-}
+const allUsers = [
+  {
+    name: "Moore Hensley",
+    friends: ["Sharron Pace"],
+  },
+  {
+    name: "Sharlene Bush",
+    friends: ["Briana Decker", "Sharron Pace"],
+  },
+  {
+    name: "Ross Vazquez",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+  },
+  {
+    name: "Elma Head",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+  },
+  {
+    name: "Carey Barr",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+  },
+  {
+    name: "Blackburn Dotson",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+  },
+  {
+    name: "Sheree Anthony",
+    friends: ["Goldie Gentry", "Briana Decker"],
+  },
+];
 
-// const allUsers = [
-//   {
-//     name: "Moore Hensley",
-//     friends: ["Sharron Pace"],
-//   },
+//* Повна версія стрілочної функції:
+// const getUsersWithFriend = (users, friendName) => {
+//   return users.filter((user) => user.friends.includes(friendName));
+// };
+
+//* Скорочена версія стрілочної функції:
+const getUsersWithFriend = (users, friendName) =>
+  users.filter((user) => user.friends.includes(friendName));
+
+console.log(getUsersWithFriend(allUsers, "Briana Decker"));
+
+//*Результат повинен бути:
+// [
 //   {
 //     name: "Sharlene Bush",
-//     friends: ["Briana Decker", "Sharron Pace"],
-//   },
-//   {
-//     name: "Ross Vazquez",
-//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-//   },
-//   {
-//     name: "Elma Head",
-//     friends: ["Goldie Gentry", "Aisha Tran"],
-//   },
-//   {
-//     name: "Carey Barr",
-//     friends: ["Jordan Sampson", "Eddie Strong"],
-//   },
-//   {
-//     name: "Blackburn Dotson",
-//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     friends: ["Briana Decker", "Sharron Pace"]
 //   },
 //   {
 //     name: "Sheree Anthony",
-//     friends: ["Goldie Gentry", "Briana Decker"],
+//     friends: ["Goldie Gentry", "Briana Decker"]
+//   }
+// ]
+
+console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
+//*Результат повинен бути:
+// [
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"]
 //   },
-// ];
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"]
+//   }
+// ]
 
-// console.log(getUsersWithFriend(allUsers, "Briana Decker"));
-// // [
-// //   {
-// //     name: "Sharlene Bush",
-// //     friends: ["Briana Decker", "Sharron Pace"]
-// //   },
-// //   {
-// //     name: "Sheree Anthony",
-// //     friends: ["Goldie Gentry", "Briana Decker"]
-// //   }
-// // ]
-
-// console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
-// // [
-// //   {
-// //     name: "Elma Head",
-// //     friends: ["Goldie Gentry", "Aisha Tran"]
-// //   },
-// //   {
-// //     name: "Sheree Anthony",
-// //     friends: ["Goldie Gentry", "Briana Decker"]
-// //   }
-// // ]
-
-// console.log(getUsersWithFriend(allUsers, "Adrian Cross")); // []
+console.log(getUsersWithFriend(allUsers, "Adrian Cross"));
+//*Результат повинен бути:
+// []

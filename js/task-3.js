@@ -13,94 +13,90 @@
 
 `use strict`; // Код у суворому режимі
 
-const profile = {
-  username: "Jacob",
-  playTime: 300,
-  getInfo() {
-    return `${this.username} has ${this.playTime} active hours!`;
-  },
-  changeUsername(newName) {
-    this.username = newName;
-  },
-  updatePlayTime(hours) {
-    this.playTime += hours;
-  },
-};
+//* Повна версія стрілочної функції:
+// const sortByDescendingFriendCount = (users) => {
+//   return users.toSorted((a, b) => b.friends.length - a.friends.length);
+// };
 
-// console.log(
-//   sortByDescendingFriendCount([
-//     {
-//       name: "Moore Hensley",
-//       friends: ["Sharron Pace"],
-//       gender: "male"
-//     },
-//     {
-//       name: "Sharlene Bush",
-//       friends: ["Briana Decker", "Sharron Pace"],
-//       gender: "female"
-//     },
-//     {
-//       name: "Ross Vazquez",
-//       friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-//       gender: "male"
-//     },
-//     {
-//       name: "Elma Head",
-//       friends: ["Goldie Gentry", "Aisha Tran"],
-//       gender: "female"
-//     },
-//     {
-//       name: "Carey Barr",
-//       friends: ["Jordan Sampson", "Eddie Strong"],
-//       gender: "male"
-//     },
-//     {
-//       name: "Blackburn Dotson",
-//       friends: ["Jacklyn Lucas", "Linda Chapman"],
-//       gender: "male"
-//     },
-//     {
-//       name: "Sheree Anthony",
-//       friends: ["Goldie Gentry", "Briana Decker"],
-//       gender: "female"
-//     }
-//   ])
-// );
+//* Скорочена версія стрілочної функції:
+const sortByDescendingFriendCount = (users) =>
+  users.toSorted((a, b) => b.friends.length - a.friends.length);
 
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male",
+    },
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female",
+    },
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male",
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female",
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male",
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male",
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female",
+    },
+  ])
+);
+
+//*Результат повинен бути:
 // [
 //   {
 //     name: "Ross Vazquez",
 //     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-//     gender: "male"
+//     gender: "male",
 //   },
 //   {
 //     name: "Sharlene Bush",
 //     friends: ["Briana Decker", "Sharron Pace"],
-//     gender: "female"
+//     gender: "female",
 //   },
 //   {
 //     name: "Elma Head",
 //     friends: ["Goldie Gentry", "Aisha Tran"],
-//     gender: "female"
+//     gender: "female",
 //   },
 //   {
 //     name: "Carey Barr",
 //     friends: ["Jordan Sampson", "Eddie Strong"],
-//     gender: "male"
+//     gender: "male",
 //   },
 //   {
 //     name: "Blackburn Dotson",
 //     friends: ["Jacklyn Lucas", "Linda Chapman"],
-//     gender: "male"
+//     gender: "male",
 //   },
 //   {
 //     name: "Sheree Anthony",
 //     friends: ["Goldie Gentry", "Briana Decker"],
-//     gender: "female"
+//     gender: "female",
 //   },
 //   {
 //     name: "Moore Hensley",
 //     friends: ["Sharron Pace"],
-//     gender: "male"
-//   }
-// ]
+//     gender: "male",
+//   },
+// ];
